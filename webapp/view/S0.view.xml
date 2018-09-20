@@ -1,0 +1,27 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="alfaerp.ServiceLayerLogin.controller.S0" displayBlock="true">
+	<App id="idAppControl">
+		<pages>
+			<Page title="Autenticação">
+				<content>
+					<sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form"
+						xmlns:sap.ui.core="sap.ui.core" id="form0">
+						<sap.ui.layout.form:content>
+							<Label text="Session ID"/>
+							<Text text="{user>/SessionId}"/>
+							<Label text="SessionTimeout"/>
+							<Text text="{user>/SessionTimeout}"/>
+							<Label text="Version"/>
+							<Text text="{user>/Version}"/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<List items="{data>/body/value}">
+						<items>
+							<StandardListItem title="{data>BankCode} {data>BankName}" />
+						</items>
+					</List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
